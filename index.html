@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bezier Curve</title>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: #222;
+            color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            position: relative;
+        }
+
+        h1 {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: #ffcc00;
+            text-shadow: 2px 2px 10px rgba(255, 204, 0, 0.5);
+        }
+
+        #canvasContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            flex-grow: 1;
+            gap: 20px;
+        }
+
+        .canvasWrapper {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 90%;
+            max-width: 1000px;
+        }
+
+        canvas {
+            border: 2px solid #ffcc00;
+            background-color: #333;
+            box-shadow: 0 4px 12px rgba(255, 204, 0, 0.3);
+            flex-shrink: 0;
+        }
+
+        p {
+            font-size: 18px;
+            color: #ffcc00;
+            white-space: nowrap;
+        }
+
+        #buttonContainer {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 10px;
+            background-color: #111;
+            border-top: 2px solid #ffcc00;
+        }
+
+        button {
+            background-color: #ffcc00;
+            border: none;
+            color: #222;
+            padding: 12px 24px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 6px rgba(255, 204, 0, 0.3);
+        }
+
+        button:hover {
+            background-color: #ffaa00;
+            box-shadow: 0 5px 10px rgba(255, 204, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div id="canvasContainer">
+        <div class="canvasWrapper">
+            <canvas id="bezierCanvas" width="800" height="400"></canvas>
+            <p>Bezier Curve</p>
+        </div>
+        <div class="canvasWrapper">
+            <canvas id="derivativeCanvas" width="800" height="400"></canvas>
+            <p>First Derivative</p>
+        </div>
+    </div>
+
+    <div id="buttonContainer">
+        <button id="controlPointsButton">Control Points</button>
+        <button id="bezierCurveButton">Bezier Curve</button>
+        <button id="resetButton">Reset</button>
+    </div>
+
+    <h1>Bezier Curve Drawer</h1>
+    <script src="moe.js"></script>
+</body>
+</html>
