@@ -136,7 +136,7 @@ const resetCanvas = (ctx, derivativeCtx) => {
     controlPoints.length = 0;
 };
 
-window.onload = function() {
+globalThis.onload = function() {
     const canvas = document.getElementById('bezierCanvas');
     const ctx = canvas.getContext('2d');
     const derivativeCanvas = document.getElementById('derivativeCanvas');
@@ -176,17 +176,17 @@ window.onload = function() {
             controlPoints[draggedIndex] = { x, y };
             let finalPoints = [];
             for (let i = 0; i <= 150; i++) {
-                let t = i / 150;
-                let allPoints = deCasteljau(controlPoints, t);
+                const t = i / 150;
+                const allPoints = deCasteljau(controlPoints, t);
                 finalPoints.push(allPoints[allPoints.length - 1][0]);
             }
             drawIntermediatePoints(ctx, [controlPoints], finalPoints, true);
 
-            let derivativeVectors = bezierCurveDerivative();
+            const derivativeVectors = bezierCurveDerivative();
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
 
-            let translatedVectors = derivativeVectors.map(vector => ({
+            const translatedVectors = derivativeVectors.map(vector => ({
                 x: vector.x + centerX,
                 y: vector.y + centerY
             }));
