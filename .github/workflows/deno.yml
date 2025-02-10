@@ -1,4 +1,4 @@
-name: Deno
+name: Deno Deploy
 
 on:
   push:
@@ -25,4 +25,4 @@ jobs:
       - name: Deploy to Deno Deploy
         run: |
           curl -fsSL https://deno.land/x/deploy/install.sh | sh
-          deno deploy --token ${{ secrets.DENO_DEPLOY_TOKEN }} ./main.ts
+          deno deploy --token ${{ secrets.DENO_DEPLOY_TOKEN }} ./index.html
