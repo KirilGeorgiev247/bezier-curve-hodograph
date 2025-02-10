@@ -193,8 +193,8 @@ globalThis.onload = function() {
 
             finalPoints = [];
             for (let i = 0; i <= 150; i++) {
-                let t = i / 150;
-                let allPoints = deCasteljau(translatedVectors, t);
+                const t = i / 150;
+                const allPoints = deCasteljau(translatedVectors, t);
                 finalPoints.push(allPoints[allPoints.length - 1][0]);
             }
 
